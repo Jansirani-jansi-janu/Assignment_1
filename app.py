@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine
@@ -25,7 +26,6 @@ conn = engine.connect()
 
 st.title("🍱 Local Food Wastage Management System")
 
-# Main menu
 option = st.selectbox("Choose what to view:", [
     "All Providers",
     "All Receivers",
@@ -170,4 +170,3 @@ elif option == "SQL Query Analysis":
         df = pd.read_sql(query_dict[query_choice], conn)
         st.subheader(f"Result: {query_choice}")
         st.dataframe(df)
-
